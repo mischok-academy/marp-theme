@@ -175,13 +175,252 @@ a:hover {
   text-decoration:    underline;
 }
 
-code, pre {
+/* Code-Blöcke (ohne Syntax-Highlighting) */
+code {
   font-family:        var(--font-mono);
   background-color:   var(--color-panther);
   border-radius:      4px;
   padding:            0.2rem 0.5rem;
   font-size:          0.95rem;
   color:              var(--color-portfolio);
+}
+
+/* Pre-formatierter Text und Code-Blöcke */
+pre {
+  font-family:        var(--font-mono);
+  background-color:   var(--color-panther);
+  border-radius:      8px;
+  padding:            var(--spacing-sm);
+  font-size:          0.9rem;
+  line-height:        1.4;
+  overflow-x:         auto;
+  border:             1px solid rgba(255, 255, 255, 0.1);
+  margin:             var(--spacing-sm) 0;
+}
+
+pre code {
+  background:         none;
+  padding:            0;
+  border-radius:      0;
+  color:              var(--color-snow);
+}
+
+/* =====================
+   SYNTAX HIGHLIGHTING
+   Basiert auf Highlight.js Dark Theme
+   Angepasst an mischok-academy Farben
+   ===================== */
+
+/* Basis-Highlight.js Klassen */
+.hljs {
+  background:         var(--color-midnight);
+  color:              var(--color-snow);
+}
+
+.hljs-comment,
+.hljs-meta {
+  color:              var(--color-stone);
+  font-style:         italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-type,
+.hljs-literal {
+  color:              #ff6b9d;
+  font-weight:        500;
+}
+
+.hljs-number,
+.hljs-regexp,
+.hljs-variable.constant_ {
+  color:              var(--color-mustard);
+}
+
+.hljs-string,
+.hljs-attr,
+.hljs-template-variable,
+.hljs-symbol {
+  color:              var(--color-portfolio);
+}
+
+.hljs-function,
+.hljs-title {
+  color:              #ffd700;
+}
+
+.hljs-title.function_,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color:              #ffd700;
+  font-weight:        500;
+}
+
+.hljs-variable,
+.hljs-property,
+.hljs-attribute {
+  color:              var(--color-snow);
+}
+
+.hljs-params {
+  color:              var(--color-snow);
+}
+
+.hljs-built_in,
+.hljs-type {
+  color:              var(--color-warning);
+}
+
+.hljs-tag,
+.hljs-name {
+  color:              var(--color-warning);
+}
+
+.hljs-selector-id,
+.hljs-selector-class {
+  color:              #ff6b9d;
+}
+
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color:              var(--color-portfolio);
+}
+
+.hljs-addition {
+  color:              var(--color-portfolio);
+  background-color:   rgba(0, 255, 0, 0.1);
+}
+
+.hljs-deletion {
+  color:              var(--color-warning);
+  background-color:   rgba(255, 0, 0, 0.1);
+}
+
+.hljs-emphasis {
+  font-style:         italic;
+}
+
+.hljs-strong {
+  font-weight:        bold;
+}
+
+/* Template Strings */
+.hljs-subst {
+  color:              var(--color-warning);
+}
+
+/* JavaScript/TypeScript spezifisch */
+.language-javascript .hljs-keyword,
+.language-typescript .hljs-keyword {
+  color:              #ff6b9d;
+}
+
+.language-javascript .hljs-built_in,
+.language-typescript .hljs-built_in {
+  color:              var(--color-warning);
+}
+
+/* Python spezifisch */
+.language-python .hljs-meta {
+  color:              var(--color-mustard);
+}
+
+.language-python .hljs-built_in {
+  color:              var(--color-warning);
+}
+
+/* CSS/SCSS spezifisch */
+.language-css .hljs-selector-tag,
+.language-scss .hljs-selector-tag {
+  color:              #ff6b9d;
+}
+
+.language-css .hljs-attribute,
+.language-scss .hljs-attribute {
+  color:              var(--color-portfolio);
+}
+
+.language-css .hljs-number,
+.language-scss .hljs-number {
+  color:              var(--color-mustard);
+}
+
+.language-scss .hljs-variable {
+  color:              var(--color-warning);
+}
+
+/* HTML spezifisch */
+.language-html .hljs-tag,
+.language-xml .hljs-tag {
+  color:              var(--color-warning);
+}
+
+.language-html .hljs-name,
+.language-xml .hljs-name {
+  color:              var(--color-warning);
+}
+
+.language-html .hljs-attr,
+.language-xml .hljs-attr {
+  color:              var(--color-mustard);
+}
+
+.language-html .hljs-string,
+.language-xml .hljs-string {
+  color:              var(--color-portfolio);
+}
+
+/* Shell/Bash spezifisch */
+.language-bash .hljs-built_in,
+.language-shell .hljs-built_in {
+  color:              #ffd700;
+}
+
+/* JSON spezifisch */
+.language-json .hljs-attr {
+  color:              var(--color-portfolio);
+}
+
+.language-json .hljs-string {
+  color:              var(--color-mustard);
+}
+
+/* SQL spezifisch */
+.language-sql .hljs-keyword {
+  color:              #ff6b9d;
+  text-transform:     uppercase;
+}
+
+/* Custom mischok-academy Code-Block Styles */
+pre.language-javascript,
+pre.language-typescript,
+pre.language-jsx,
+pre.language-tsx {
+  border-left:        3px solid #ffd700;
+}
+
+pre.language-python {
+  border-left:        3px solid var(--color-portfolio);
+}
+
+pre.language-css,
+pre.language-scss,
+pre.language-sass {
+  border-left:        3px solid #ff6b9d;
+}
+
+pre.language-html,
+pre.language-xml {
+  border-left:        3px solid var(--color-warning);
+}
+
+pre.language-bash,
+pre.language-shell {
+  border-left:        3px solid var(--color-mustard);
+}
+
+pre.language-json {
+  border-left:        3px solid var(--color-stone);
 }
 
 blockquote {
